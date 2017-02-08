@@ -1,6 +1,23 @@
+
 body {
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway:700', sans-serif;
     font-size: 14px;
+    background-color: #C8D6BF;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header,
+.marketing,
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.text-muted {
+   padding: 10px;
+   border-bottom: 1px solid #6CBDB5; 
+   color: #1182AB; 
 }
 
 .form-horizontal {
