@@ -1,61 +1,78 @@
-  <!--post ad---------------------------------->
-    
+<!--post ad---------------------------------->
 
- <ul class="nav nav-pills">
-   <li class="active">
-     <input type="search" placeholder="Filter" name="search" class="form-control input-sm search-form" ng-model="search"/>
-   </li>
-     <li class="dropdown" ng-init="sortType='date'; sortName='Date'">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Sort By {{sortName}}<span class="caret"></span>
+
+<ul class="nav nav-pills">
+  <li class="active">
+    <input type="search" placeholder="Filter" name="search" class="form-control input-sm search-form" ng-model="search"/>
+  </li>
+  <li class="dropdown" ng-init="sortType='date'; sortName='Date'">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Sort By {{sortName}}<span class="caret"></span>
         </a>
-        <ul class="dropdown-menu" >
-          <li>
-            <a class="btn btn-sort" ng-click="sortType='date'; sortName='Date'">Date</a>
-          </li>
-            <li>
-                <a class="btn btn-sort" ng-click="sortType='price'; sortName='Price'">Price</a>
-            </li>
-        </ul>
-    </li>
- </ul>   
-    <h3>All Advertises</h3>
-    <div class="media-left" ng-repeat="ad in $ctrl.ads | filter:search | orderBy:sortType">
-      <div class="col-md-12">
-      <div class ="row"><img style="width: 100px; float: left; padding: 20px;" ng-src="{{ad.item_image}}" class="media-object">
-      <div><a ui-sref="edit({id: ad.id})">edit</a></div>
-      <div><p>{{ad.title}}</p></div>
-      <div><p>{{ad.description}}</p></div>
-      <div><p>Price: {{ad.price}}</p></div>
-      <span am-time-ago="ad.created_at">{{ad.created_at | date}}</span>
-     </div>
+    <ul class="dropdown-menu">
+      <li>
+        <a class="btn btn-sort" ng-click="sortType='date'; sortName='Date'">Date</a>
+      </li>
+      <li>
+        <a class="btn btn-sort" ng-click="sortType='price'; sortName='Price'">Price</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!--create new ad-------------------------->
+  <form class="form-horizontal" name="form" novalidate ng-submit="$ctrl.createAd(ad)">
+      <legend>Post new ad</legend>
+        <div ng-class='form-group'>
+          <label class="col-sm-2 control-label" for="title">Title</label>
+          <div class="col-sm-10">
+            <input class="form-control" ng-model="$ctrl.ad.title" type="text" name="title" id="title" placeholder="title"/>
+          </div>        
+        </div>
+        
+        <div ng-class='form-group'>
+          <label for="description" class="col-sm-2 control-label">Description</label>
+          <div class="col-sm-10">
+          <textarea class="form-control" ng-model="$ctrl.ad.description" type="text" name="description" id="description" placeholder="description"></textarea>
+          </div>
+        </div>
+
+        <div>
+          <div ng-class='form-group'>
+          <label for="price" class="col-sm-2 control-label">Price</label>
+          <div class="col-sm-2">
+            <input class="form-control" ng-model="$ctrl.ad.price" type="number" name="price" id="price" placeholder="price"/>
+          </div>
+        </div>
+
+        <div ng-class='form-group'>
+          <label for="image" class="col-sm-2 control-label">Item Image</label>
+          <div class="col-sm-2">
+            <input class="form-control" ng-model="$ctrl.ad.item_image" type="url" name="image" id="image" placeholder="image url"/>
+          </div>
+        </div>
+        </div>
+         <br>
+        <div class="row col-sm-12 col-md-offset-2">
+          <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Submit</button>
+        </div>        
+  </form>
+
+
+<div class="row" ng-repeat="ad in $ctrl.ads | filter:search | orderBy:sortType">
+  <div class="col-md-12 media-list">
+    <div class="media-left media-middle"><img ng-src="{{ad.item_image}}" class="img_ad media-object"></div>
+    <div class="media-body media-middle">
+      <div class="media-heading">
+        <h4>{{ad.title}}</h4>
+      </div>
+      <div>
+        <p>{{ad.description}}</p>
+      </div>
+      <div>
+        <p>Price: {{ad.price | currency}}</p>
+      </div>
+      <small><span am-time-ago="ad.created_at">{{ad.created_at | date}}</small>
+      <br><a type="button" class="btn" ui-sref="edit({id: ad.id})">edit</a>
     </div>
   </div>
-      <!--create new ad-------------------------->
-      
-  <form name="form" novalidate ng-submit="$ctrl.createAd(ad)">
-  <fieldset>
-    <legend>Post a new ad</legend>
-    <div>
-    <div ng-class='form-group'>
-      <input class="form-control" ng-model="$ctrl.ad.title" type="text" name="title" id="title" placeholder="title"/>
-      <label for="title">Title</label>
-    </div>
-    <div ng-class='form-group'>
-      <textarea class="form-control" ng-model="$ctrl.ad.description" type="text" name="description" id="description" placeholder="description"/></textarea>
-      <label for="description">Description</label>
-    </div>
-    <div ng-class='form-group'>
-      <input class="form-control" ng-model="$ctrl.ad.price" type="text" name="price" id="price" placeholder="price"/>
-      <label for="price">Price</label>
-    </div>
-    <div ng-class='form-group'>
-      <input ng-class="form-control" ng-model="$ctrl.ad.item_image" type="url" name="image" id="image" placeholder="image url"/>
-      <label for="image">Item Image</label>
-    </div>
-    <div class="form-group">
-      <input type="submit" class="btn btn-primary" ng-disabled="form.$invalid">
-      </div>
-    </div>
-  </fieldset>
-</form>
 </div>

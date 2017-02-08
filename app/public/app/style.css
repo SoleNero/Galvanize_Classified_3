@@ -1,0 +1,50 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+}
+
+.form-horizontal {
+  margin:20px;
+}
+
+.form-control {
+  margin:10px;
+}
+
+.img_ad {
+  width: 20vw; 
+  margin: 5vw;
+}
+h4 {
+  font-size: 1.7vmax;
+  font-family: 'Raleway:700', sans-serif;
+}
+.media-body {
+  font-size: 1.4vmax;
+  font-family: 'Raleway', sans-serif;
+}
+
+a.btn {
+  font-size: 1.4vmax;
+  font-family: 'Raleway', sans-serif;
+  margin:10px;
+  background-color: 
+}
+
+
+ /*Mixin itself*/
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+ /*Usage as a mixin*/
+.element {
+  .clearfix();
+}
