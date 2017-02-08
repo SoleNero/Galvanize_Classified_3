@@ -11,7 +11,7 @@ body {
   padding-left: 15px;
 }
 
-/*less space in container on the right, header looks more center*/
+/*Less space in container on the right, header looks more center*/
 .constainer {
   padding-right: 40px;
 }
@@ -40,18 +40,16 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-/* Custom search and sort container*/
+/* Custom search and sort container */
 
-.flex-container {
+.flex-container .searchblock {
   display: flex;
-  /*flex-flow: row;*/
-  /*flex-wrap: wrap;*/
-  justify-content: center;
+  justify-content: center; 
+  color: #5F5E5D; 
   font-family: 'Raleway', sans-serif;
 }
 
-.search-card {
-  display: flex;
+.search-form-card {
   flex-wrap: nowrap; 
   background-color: #B4B2AE;
   border-radius: 6px;
@@ -59,8 +57,12 @@ body {
   box-shadow: 0px 1px 3px hsla(0, 0%, 0%, 0.2);
 }
 
-.search-card .post-options {
+.search-filter {
   display: flex;
+  justify-content: center;
+}
+
+.search-filter .post-options {
   flex-wrap: wrap;
   padding:10px;
 }
@@ -68,31 +70,30 @@ body {
 .post-options .active {
   padding: 5px 15px;  
 }
-
-.search-card .sort {
- flex-direction: column;
-}
-
-.post-options .btn {
+.btn {
   padding: 5px 15px;
-  height: 45px;
-  background-color: #E87162;
-  font-family: 'Raleway:700', sans-serif;
-}
-.sort .button-sort {
   padding-top: 5px;
   padding-bottom: 5px;
   margin: auto;
+  background-color: #E87162;
+  font-family: 'Raleway:700', sans-serif; 
+  border: none;
+  color: #5F5E5D;
+}
+
+.btn-primary {
+  margin-top:10px; 
+}
+
+/*Custom form*/
+form {
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
 
 
-/*.form-horizontal {
-  margin:20px;
-}
 
-
-
-.img_ad {
+/*.img_ad {
   width: 20vw; 
   margin: 5vw;
 }
