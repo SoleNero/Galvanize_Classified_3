@@ -7,8 +7,6 @@ const path = require('path');
 
 app.use(bodyParser.json());
 
-
-
 app.use('/api/classifieds', require('./routes/classifieds'))
 
 app.use(express.static(path.join(__dirname, 'app/public')))
@@ -37,10 +35,10 @@ app.use(function(err, req, res, next) {
   res.json(err)
 })
 
-// const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
-// app.listen(port, () => {
-//     console.log('Listening on port', port);
-// });
+app.listen(port, () => {
+    console.log('Listening on port', port);
+});
 
 module.exports = app;
