@@ -25,7 +25,7 @@
         </div>
         <div ng-class='form-group'>
           <label for="description"></label>
-          <textarea class="form-control" ng-model="$ctrl.ad.description" type="text" name="description" id="description" placeholder="description"></textarea>
+          <textarea class="form-control" ng-model="$ctrl.ad.description" type="text" rows="4" name="description" id="description" placeholder="description"></textarea>
         </div>
         <div>
           <div ng-class='form-group'>
@@ -48,7 +48,7 @@
   <div class="row well" ng-repeat="ad in $ctrl.ads | filter:search | orderBy:sortType">
   <div class="col-md-12 media-list">
     <div class="col-md-6"><img ng-src="{{ad.item_image}}" class="img-responsive"></div>
-    <div class="col-md-6">
+    <div class="col-md-6 items-info">
       <div class="media-heading">
         <h4>{{ad.title}}</h4>
       </div>
@@ -59,7 +59,7 @@
         <p>Price: {{ad.price | currency}}</p>
       </div>
       <small><span am-time-ago="ad.created_at">{{ad.created_at | date}}</small>
-      <br><a type="button" class="btn" ui-sref="edit({id: ad.id})">edit</a>
+      <br><button type="button" class="btn" ui-sref="edit({id: ad.id})">edit</button>
     </div>
   </div>
 </div>
