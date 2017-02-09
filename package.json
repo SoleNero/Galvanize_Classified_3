@@ -1,5 +1,5 @@
 {
-  "name": "galvanize-classified-ad",
+  "name": "bikeswap",
   "version": "1.0.0",
   "main": "app.js",
   "license": "MIT",
@@ -10,8 +10,8 @@
     "heroku-postbuild": "knex migrate:latest"
   },
   "keywords": [],
-  "author": "",
-  "description": "",
+  "author": "Justyna Foster",
+  "description": "Galvanize Classified - Part 3",
   "dependencies": {
     "angular": "^1.6.1",
     "angular-moment": "^1.0.1",
@@ -33,5 +33,16 @@
     "mocha": "^3.2.0",
     "nodemon": "^1.11.0",
     "supertest": "^2.0.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoleNero/bikeswap.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SoleNero/bikeswap/issues"
+  },
+  "homepage": "https://github.com/SoleNero/bikeswap#readme"
 }
