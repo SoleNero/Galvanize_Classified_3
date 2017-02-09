@@ -1,10 +1,6 @@
-<div class="page-header">
-  <h1>
-    {{$ctrl.ad.title}}
-  </h1>
-</div>
 
-<div class="row">
+
+<!--<div class="row">
   <div class="col-md-8">
 
     <form name="form" novalidate ng-submit="$ctrl.editAd()">
@@ -36,4 +32,44 @@
     </div>
 </form>
   </div>
+</div>-->
+
+<div class="page-header">
+  <h2>
+    {{$ctrl.ad.title}}
+  </h2>
+</div>
+
+<div class="flex-container edit-post">
+  <div class="col-md-12 text-center well">
+      <form class="form" name="form" novalidate ng-submit="$ctrl.editAd()">
+        <div ng-class='form-group'>
+          <label for="title"></label>
+          <input class="form-control" ng-model="$ctrl.ad.title" type="text" name="title" id="title" placeholder="title" />
+        </div>
+        <div ng-class='form-group'>
+          <label for="description"></label>
+          <textarea class="form-control" ng-model="$ctrl.ad.description" type="text" rows="4" name="description" id="description" placeholder="description"></textarea>
+        </div>
+        <div>
+          <div ng-class='form-group'>
+            <label for="price"></label>
+            <input class="form-control" ng-model="$ctrl.ad.price" type="number" name="price" id="price" placeholder="price" />
+          </div>
+          <div ng-class='form-group'>
+            <label for="image"></label>
+            <input class="form-control" ng-model="$ctrl.ad.item_image" type="url" name="image" id="image" placeholder="image url" />
+          </div>
+        </div>
+        <div class="form-group">
+      <button type="submit" id="submit" class="btn btn-primary submit">Edit Ad</button>
+      </div>
+      <div>
+      <button class="btn btn-primary submit" type="button" ng-click="$ctrl.deleteAd()">
+      Delete Record
+    </button>
+    </div>
+          <!--<button type="submit" class="btn btn-primary submit" ng-disabled="form.$invalid">Submit</button>-->
+      </form>
+    </div>
 </div>

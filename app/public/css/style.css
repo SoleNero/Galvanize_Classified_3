@@ -126,6 +126,16 @@ form {
   background-color: #EC8D81;
 }
 
+.page-header h2 {
+  color: #E87162; 
+  font-family: 'Raleway', sans-serif;
+}
+
+.flex-container .edit-post {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
   font-size: 5.9vw;
 }

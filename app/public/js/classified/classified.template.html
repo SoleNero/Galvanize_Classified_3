@@ -1,4 +1,4 @@
-<!--post ad---------------------------------->
+<!--search ads or sort the list-->
 
 <div class="flex-container searchblock">
   <div class="search-form-card">
@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <!--<div class="col-md-4"></div>-->
+    <!--Form to add new post-->
     <div class="col-md-12 text-center new-post">
       <form class="form" name="form" novalidate ng-submit="$ctrl.createAd(ad)">
         <h3 class="active text-center">Add New Post</h3>
@@ -43,7 +43,7 @@
   </div>
 </div>
 
-
+<!--List of Ads-->
 <div class="flex-container ad-list">
   <div class="row well" ng-repeat="ad in $ctrl.ads | filter:search | orderBy:sortType">
   <div class="col-md-12 media-list">
