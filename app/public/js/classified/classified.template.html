@@ -44,11 +44,11 @@
 </div>
 
 
-
-<div class="row" ng-repeat="ad in $ctrl.ads | filter:search | orderBy:sortType">
+<div class="flex-container ad-list">
+  <div class="row well" ng-repeat="ad in $ctrl.ads | filter:search | orderBy:sortType">
   <div class="col-md-12 media-list">
-    <div class="media-left media-middle"><img ng-src="{{ad.item_image}}" class="img_ad media-object"></div>
-    <div class="media-body media-middle">
+    <div class="col-md-6"><img ng-src="{{ad.item_image}}" class="img-responsive"></div>
+    <div class="col-md-6">
       <div class="media-heading">
         <h4>{{ad.title}}</h4>
       </div>
@@ -62,4 +62,5 @@
       <br><a type="button" class="btn" ui-sref="edit({id: ad.id})">edit</a>
     </div>
   </div>
+</div>
 </div>
