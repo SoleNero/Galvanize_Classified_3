@@ -3,9 +3,9 @@ Welcome to Bike Swap!
 
 ![Screen Shot 2017-02-09 at 1.11.08 PM](Screen Shot 2017-02-09 at 1.11.08 PM.png) 
 
+![Screen Shot 2017-02-09 at 1.11.25 PM](Screen Shot 2017-02-09 at 1.11.25 PM.png)
 
-
-
+![Screen Shot 2017-02-09 at 3.55.29 PM](Screen Shot 2017-02-09 at 3.55.29 PM.png)
 
 
 
