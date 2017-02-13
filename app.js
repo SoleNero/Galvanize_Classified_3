@@ -35,10 +35,10 @@ app.use(function(err, req, res, next) {
   res.json(err)
 })
 
-// const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000;
 
-// app.listen(port, () => {
-//     console.log('Listening on port', port);
-// });
+app.listen(port, () => {
+    console.log('Listening on port', port);
+});
 
 module.exports = app;
