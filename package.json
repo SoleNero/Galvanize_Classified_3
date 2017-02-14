@@ -7,7 +7,6 @@
     "start": "/usr/bin/env node bin/www",
     "start-local": "gulp",
     "test": "mocha",
-    "dev": "gulp",
     "heroku-postbuild": "knex migrate:latest"
   },
   "keywords": [],

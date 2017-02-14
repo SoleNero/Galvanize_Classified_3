@@ -7,9 +7,9 @@ const path = require('path');
 
 app.use(bodyParser.json());
 
-app.use('/api/classifieds', require('./routes/classifieds'))
+app.use('/api/classifieds', require('./routes/classifieds'));
 
-app.use(express.static(path.join(__dirname, 'app/public')))
+app.use(express.static(path.join(__dirname, 'app/public')));
 //wildcard
 app.use('*', function(req, res, next) {
   res.sendFile('index.html', {root: path.join(__dirname, 'app/public')})
