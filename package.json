@@ -4,9 +4,8 @@
   "main": "app.js",
   "license": "MIT",
   "scripts": {
-    "start": "npm start",
+    "start": "node",
     "test": "mocha",
-    "dev": "gulp",
     "heroku-postbuild": "knex migrate:latest"
   },
   "keywords": [],
